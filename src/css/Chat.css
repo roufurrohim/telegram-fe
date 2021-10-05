@@ -1,0 +1,164 @@
+.contentLeft {
+    background-color: white;
+    height: 100vh;
+    border-right: 1px solid #E5E5E5;
+}
+
+.titleTele {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 29px;
+    line-height: 34px;
+    text-align: center;
+    letter-spacing: -0.165px;
+    color: #7E98DF;
+}
+
+.iconMenu {
+    color: #7E98DF;
+}
+
+.menu {
+    position: absolute;
+    width: 12%;
+    height: 290px;
+    margin-top: 280px !important;
+    margin-left: 160px !important;
+    background-color: #7E98DF;
+    border-radius: 35px 10px 35px 35px;
+    padding: 0px;
+}
+
+.menuList {
+    cursor: pointer;
+}
+
+.listMenu {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.iconListMenu {
+    color: #FFFFFF;
+}
+
+.packSearch {
+    width: 100%;
+}
+
+.search {
+    width: 80%;
+    height: 60px;
+    padding: 8px;
+    background: #FAFAFA;
+    border-radius: 15px;
+}
+
+.iconSearch {
+    color: #848484;
+}
+
+.iconAdd {
+    color: #7E98DF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.inputSearch {
+    width: 75%;
+    border: none;
+    background: none;
+}
+
+.inputSearch:focus {
+    outline: none;
+}
+
+.contact {
+    cursor: pointer;
+}
+
+.photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+}
+
+.contentRight {
+    height: 100vh;
+    background-color: #FAFAFA;
+}
+
+.noteChat {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #848484;
+}
+
+.notChatList {
+    padding: 30%;
+}
+
+.receiver {
+    background-color: #fff;
+}
+
+.nameReceiver {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.165px;
+    color: #232323;
+}
+
+.status {
+    color: #7E98DF;
+}
+
+#listMsgs {
+    background-color: aquamarine !important;
+    /* margin-top: 1000px; */
+}
+
+.sendMsg {
+    width: 75% !important;
+    height: 100px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.packSend {
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 60px;
+    background: #FAFAFA;
+    border-radius: 15px;
+}
+
+.inputMessage {
+    width: 130%;
+    border: none;
+    background: none;
+}
+
+.inputMessage:focus {
+    outline: none;
+}
+
+.menuAdd {
+    position: absolute;
+    width: 15% !important;
+    height: 250px;
+    margin-top: -290px !important;
+    margin-left: 870px !important;
+    background-color: #7E98DF;
+    border-radius: 35px 35px 10px 35px;
+    padding: 0px;
+}

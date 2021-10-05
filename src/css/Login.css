@@ -1,0 +1,150 @@
+.pageLogin {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5E5E5;
+}
+
+.cardLogin {
+    width: 30%;
+    height: 750px;
+    padding: 40px;
+    display: flex;
+    /* justify-content: center; */
+    background: #FFFFFF;
+    box-shadow: 0px 20px 20px rgba(126, 152, 223, 0.05);
+    border-radius: 30px !important;
+    margin: 15px 433px;
+}
+
+.cardLogin .titleLogin {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: -0.165px;
+    color: #7E98DF;
+}
+
+.labelLogin {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #848484;
+    opacity: 0.75;
+}
+
+.borderLogin {
+    border: 1px solid #000;
+}
+
+.noteForget {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: #7E98DF;
+    cursor: pointer;
+}
+
+.btnLogin {
+    width: 360px;
+    height: 60px;
+    background: #7E98DF;
+    border-radius: 70px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btnSubmitLogin {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px !important;
+    line-height: 19px;
+    color: #FFFFFF !important;
+}
+
+.loginWith {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #848484;
+}
+
+.btnWithGoogle {
+    width: 360px;
+    height: 60px;
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #7E98DF;
+    box-sizing: border-box;
+    border-radius: 70px;
+    cursor: pointer;
+}
+
+.googleLogin {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px !important;
+    line-height: 19px;
+    text-align: center;
+    color: #7E98DF !important;
+}
+
+.iconShow {
+    cursor: pointer;
+    margin-left: 350px;
+    margin-top: 35px;
+}
+
+.createAccount {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #313131;
+}
+
+.btnSignUp {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: #7E98DF;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .pageLogin {
+        display: flex;
+        height: 100vh !important;
+        justify-content: center;
+        align-items: inherit;
+        background-color: #fff;
+        overflow-y: hidden;
+    }
+
+    .cardLogin {
+        border: none !important;
+        width: 100%;
+        /* height: px; */
+        padding: 0px !important;
+        margin-top: 50px !important;
+        box-shadow: none !important;
+        border-radius: 0px !important;
+        margin: 0px
+    }
+
+    .iconShow {
+        margin-left: 260px;
+        margin-top: 35px;
+    }
+}
