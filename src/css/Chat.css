@@ -4,12 +4,106 @@
     border-right: 1px solid #E5E5E5;
 }
 
+.iconBackP {
+    margin-right: 400px;
+    color: #2675EC;
+    cursor: pointer;
+}
+
+.titleUser {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #7E98DF;
+}
+
+.photoUser {
+    width: 85px;
+    height: 85px;
+    border-radius: 20px;
+}
+
+.nameProfile {
+    /* background-color: #848484; */
+    font-size: 22px;
+    color: #232323;
+}
+
+.noteUser,
+.noteUsername {
+    font-size: 16px;
+    color: #848484;
+    margin-top: -20px;
+}
+
+.noteTelp {
+    font-size: 16px;
+    color: #7E98DF;
+    cursor: pointer;
+}
+
+.marginPhone {
+    margin-top: 20px;
+    border: 1px solid #f6f6f6;
+}
+
+.iconSettings {
+    cursor: pointer;
+}
+
+.listChangePwd {
+    font-size: 17px;
+    color: #232323;
+    cursor: pointer;
+}
+
+.editPhotoUser {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.btnImg {
+    width: 45px;
+    height: 45px;
+    background-color: #7E98DF;
+    border-radius: 50%;
+    padding: auto;
+    margin-left: 230px;
+    margin-top: -30px;
+}
+
+.iconImg {
+    color: #FFFFFF;
+}
+
+.inputPhone[type=number]::-webkit-inner-spin-button, 
+.inputPhone[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.btnSave {
+    background-color: #7E98DF !important;
+    width: 100px;
+    height: 50px;
+    color: #fff !important;
+    font-size: 20px !important;
+}
+
+.btnCancel {
+    border: 1px solid #7E98DF !important;
+    width: 100px;
+    height: 50px;
+    color: #7E98DF !important;
+    font-size: 20px !important;
+}
+
 .titleTele {
     font-style: normal;
     font-weight: 500;
     font-size: 29px;
     line-height: 34px;
-    text-align: center;
     letter-spacing: -0.165px;
     color: #7E98DF;
 }
@@ -22,8 +116,8 @@
     position: absolute;
     width: 12%;
     height: 290px;
-    margin-top: 280px !important;
-    margin-left: 160px !important;
+    margin-top: 320px !important;
+    margin-left: 150px !important;
     background-color: #7E98DF;
     border-radius: 35px 10px 35px 35px;
     padding: 0px;
@@ -77,6 +171,23 @@
     outline: none;
 }
 
+.contactList {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 75vh;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.contactList::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.contactList {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 .contact {
     cursor: pointer;
 }
@@ -90,6 +201,7 @@
 .contentRight {
     height: 100vh;
     background-color: #FAFAFA;
+    border-right: 1px solid #E5E5E5;
 }
 
 .noteChat {
@@ -121,16 +233,68 @@
     color: #7E98DF;
 }
 
-#listMsgs {
-    background-color: aquamarine !important;
-    /* margin-top: 1000px; */
+.contentMsg {
+    height: 78vh;
+    overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.contentMsg::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.contentMsg {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.msgSender {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.photoChat {
+    width: 54px;
+    height: 54px;
+    border-radius: 20px;
+}
+
+.msgsSender {
+    width: 247px;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 35px 35px 10px 35px;
+    padding: 20px;
+    color: #232323;
+}
+
+.msgsReceiver {
+    background: #7E98DF;;
+    width: 247px;
+    height: auto;
+    border-radius: 35px 35px 35px 10px;
+    padding: 20px;
+    color: #fff;
 }
 
 .sendMsg {
-    width: 75% !important;
+    width: 100% !important;
     height: 100px;
     padding: 20px;
     background-color: #fff;
+}
+
+.delMSg {
+    display: block;
+    margin-left: 180px;
+    margin-top: -30px;
+}
+
+.delMSg:hover {
+    display: block;
+    cursor: pointer;
 }
 
 .packSend {
@@ -161,4 +325,42 @@
     background-color: #7E98DF;
     border-radius: 35px 35px 10px 35px;
     padding: 0px;
+}
+
+.contentUserContact {
+    background-color: #FAFAFA;
+    right: 0;
+}
+
+.warning {
+    color: #ff0000;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 60% ;
+        height: 300px;
+        margin-top: 340px !important;
+        margin-left: 70px !important;
+    }
+
+    .contentUserContact {
+        height: 100vh !important;
+    }
+
+    .contentTitle {
+        width: 40% !important;
+    }
+
+    .photo {
+        width: 54px;
+        height: 54px;
+        border-radius: 20px;
+    }
+
+    .btnImg {
+        text-align: center;
+        margin-left: 200px;
+        margin-top: -30px;
+    }
 }

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { BiShow, BiHide } from "react-icons/bi";
-import { LOGIN } from "../redux/actions/user";
+import { ACTION_GET_DETAILS_USER, LOGIN } from "../redux/actions/user";
+import { useDispatch } from "react-redux";
 import "../css/Login.css";
 import google from "../css/google.svg";
 import socket from "../config/socket";
 
 const Login = () => {
+  const dispatch = useDispatch();
 
-    const history = useHistory()
+  const history = useHistory();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -16,38 +18,44 @@ const Login = () => {
 
   const [showPwd, setShowPwd] = useState(false);
 
+  const [warning, setWarning] = useState("");
+
   const toggleShow = () => setShowPwd(!showPwd);
 
   const toSignUp = () => {
-    history.push('/register')
-  }
+    history.push("/register");
+  };
 
   const changeHandler = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+    setWarning("");
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    LOGIN(form).then((result) => {
-      const data = result.data[0]
-      const token = result.data.token
-      const username = result.data[0].username
-      localStorage.setItem('user', JSON.stringify(data))
-      localStorage.setItem('token', token)
-      socket.emit('login', username)
-      history.push('/chat')
-    }).catch((err) => {
-      const msg = err.response.data.message;
-      alert(msg)
-    })
+    e.preventDefault();
+    LOGIN(form)
+      .then((result) => {
+        const token = result.data.data.token
+        const idUser = result.data.data[0].id
+
+        localStorage.setItem("token", token);
+        localStorage.setItem('idUser', idUser)
+        socket.emit("login", idUser);
+        dispatch(ACTION_GET_DETAILS_USER(idUser));
+        history.push("/chat");
+      })
+      .catch((err) => {
+        const msg = err.response.data.message;
+        return setWarning(msg)
+      });
     setForm({
       email: "",
       password: "",
-    })
-  }
+    });
+  };
 
   return (
     <div>
@@ -87,9 +95,7 @@ const Login = () => {
                   onClick={toggleShow}
                   className="position-absolute iconShow"
                 >
-                  {
-                    showPwd ? <BiShow size={24} /> : <BiHide size={24} />
-                  }
+                  {showPwd ? <BiShow size={24} /> : <BiHide size={24} />}
                 </span>
                 <input
                   type={showPwd ? "text" : "password"}
@@ -101,11 +107,19 @@ const Login = () => {
                 />
                 <div className="borderLogin"></div>
               </div>
+
+              <div className="mt-3">
+                <small style={{ color: "red" }}>{warning}</small>
+              </div>
+
               <div className="form-text text-end pt-3">
                 <strong className="noteForget">Forgot Password ?</strong>
               </div>
               <div className="row mt-lg-5 mt-3">
-                <div onClick={handleSubmit} className="col-lg-12 text-center btnLogin">
+                <div
+                  onClick={handleSubmit}
+                  className="col-lg-12 text-center btnLogin"
+                >
                   <button type="submit" className="btn btnSubmitLogin">
                     Login
                   </button>
@@ -133,9 +147,12 @@ const Login = () => {
               </div>
             </form>
 
-          <div className="mt-lg-5 mt-5 text-center createAccount">
-            Don’t have an account? <span onClick={toSignUp} className=" btnSignUp">Sign Up</span>
-          </div>
+            <div className="mt-lg-5 mt-3 text-center createAccount">
+              Don’t have an account?{" "}
+              <span onClick={toSignUp} className=" btnSignUp">
+                Sign Up
+              </span>
+            </div>
           </div>
         </div>
       </div>

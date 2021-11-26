@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { BiShow, BiHide } from "react-icons/bi";
 import { IoIosArrowBack } from "react-icons/io";
-import { REGISTER } from "../redux/actions/user";
+import { ACTION_GET_DETAILS_USER, REGISTER } from "../redux/actions/user";
+import { useDispatch } from "react-redux";
 import "../css/Register.css";
 import google from "../css/google.svg";
 
 const Register = () => {
+
+  const dispatch = useDispatch()
   
   const history = useHistory();
 
@@ -15,6 +18,8 @@ const Register = () => {
     email:"",
     password:"",
   })
+
+  const [ warning, setWarning ] = useState("")
 
   const [showPwd, setShowPwd] = useState(false);
 
@@ -29,23 +34,34 @@ const Register = () => {
       ...form,
       [e.target.name]: e.target.value,
     })
+    setWarning("")
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const valid = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g).test(form.email)
     const data = {
       ...form,
       image: "default.jpg"
     }
-    REGISTER(data).then((res) => {
-      const dataResult = res.data
-      localStorage.setItem('idUser', dataResult.insertId)
-      localStorage.setItem('token', dataResult.token)
-      history.push('/chat')
-    }).catch((err) => {
-      const msg = err.response.data.message
-      alert(msg)
-    })
+    if (form.username === "" || form.email === "" || form.password === "") {
+      setWarning("input empty !!!")
+    } else if (!valid) {
+      setWarning("Input Email Failed !")
+    }else {
+      REGISTER(data).then((res) => {
+        const dataResult = res.data
+        localStorage.setItem('idUser', dataResult.insertId)
+        localStorage.setItem('token', dataResult.token)
+        dispatch(ACTION_GET_DETAILS_USER(dataResult.insertId))
+        history.push('/chat')
+      }).catch((err) => {
+        const msg = err.response.data.message
+        
+        setWarning(msg)
+      })
+    }
+    
     setForm({
       username:"",
       email: "",
@@ -121,25 +137,29 @@ const Register = () => {
                   onChange={changeHandler}
                 />
                 <div className="borderRegister"></div>
+                
+                <div className="mt-3">
+                  <p style={{color : "red"}}>{warning}</p>
+                </div>
               </div>
-              <div className="row mt-lg-5 mt-3 justify-content-center">
-                <div className="col-lg-12 text-center w-100 btnRegister">
+              <div className="row mt-lg-5 mt-4 justify-content-center">
+                <div className="col-lg-12 text-center w-100 btnRegister" onClick={handleSubmit}>
                   <button type="submit" className="btn btnSubmitRegister">
                     Register
                   </button>
                 </div>
-                <div className="col-lg-12 mt-5">
+                <div className="col-lg-12 mt-lg-5 mt-4">
                   <div className="row justify-content-center align-items-center">
-                    <div className="col-4 border-bottom"></div>
+                    <div className="col-lg-4 col-3 border-bottom"></div>
 
-                    <div className="col-4 text-center">
+                    <div className="col-lg-4 col-6 text-center">
                       <h6 className="registerWith">Register with</h6>
                     </div>
 
-                    <div className="col-4 border-bottom"></div>
+                    <div className="col-lg-4 col-3 border-bottom"></div>
                   </div>
                 </div>
-                <div className="col-lg-12 text-center w-100 mt-5 btnWithGoogle">
+                <div className="col-lg-12 text-center w-100 mt-lg-5 mt-3 btnWithGoogle">
                   <button type="submit" className="btn googleRegister">
                     <span className="me-lg-2">
                       {" "}
