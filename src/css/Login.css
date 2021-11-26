@@ -52,7 +52,7 @@
 }
 
 .btnLogin {
-    width: 360px;
+    width: 100% !important;
     height: 60px;
     background: #7E98DF;
     border-radius: 70px;
@@ -78,7 +78,7 @@
 }
 
 .btnWithGoogle {
-    width: 360px;
+    width: 100% !important;
     height: 60px;
     padding: 10px;
     background: #FFFFFF;
