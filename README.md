@@ -8,7 +8,7 @@
 <h3 align="center">Telegram Web App</h3>
 
   <p align="center">
-    <a href="https://github.com/roufurrohim/telegram-fe">View Demo</a>
+    <a href="https://telegram-fe-ochre.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/roufurrohim/telegram-fe">Report Bug</a>
     ·
