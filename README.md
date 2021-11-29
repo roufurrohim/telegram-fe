@@ -128,10 +128,20 @@ Telegram is a web app that users can create their personal account, send for mes
 Below is a sample screenshot of the App Coffee Shop website and mobile display for users.
 
 ---------------------------------------------------
-Display Web|Display Mobile
+Display Web|Display Web
 :-----------------------:|:----------------------------:
 ![](img/login.png) | ![](img/reg.png)
 ![](img/prev-chat.png) | ![](img/chat.png)
 ![](img/profile.png) | ![](img/profile-friend.png)
+
+---------------------------------------------------
+Display Mobile|Display Mobile
+:-----------------------:|:----------------------------:
+![](img/mobile%20(1).png) | ![](img/mobile%20(2).png)
+![](img/mobile%20(3).png) | ![](img/mobile%20(4).png)
+![](img/mobile%20(5).png) | ![](img/mobile%20(6).png)
+
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
